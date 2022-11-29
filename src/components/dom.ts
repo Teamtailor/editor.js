@@ -28,6 +28,8 @@ export default class Dom {
       'SOURCE',
       'TRACK',
       'WBR',
+      'LITE-YOUTUBE',
+      'LITE-VIMEO',
     ].includes(tag.tagName);
   }
 
