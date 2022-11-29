@@ -208,7 +208,12 @@ export default class Block extends EventsDispatcher<BlockEvents> {
       !mutationsOrInputEvent.some(({
         addedNodes = [],
         removedNodes,
+        target,
       }) => {
+        if ((target as HTMLElement).dataset?.mutationFree === 'true') {
+          return true;
+        }
+
         return [...Array.from(addedNodes), ...Array.from(removedNodes)]
           .some(node => $.isElement(node) && (node as HTMLElement).dataset.mutationFree === 'true');
       });
