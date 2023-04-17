@@ -27,6 +27,7 @@ export default class EditorJS {
    * Promise that resolves when core modules are ready and UI is rendered on the page
    */
   public isReady: Promise<void>;
+  public configuration: EditorConfig;
 
   /**
    * Stores destroy method implementation.
@@ -137,3 +138,6 @@ export default class EditorJS {
       });
   }
 }
+
+export { default as InlineToolbar } from './components/modules/toolbar/inline';
+export { default as SelectionUtils } from './components/selection';

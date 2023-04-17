@@ -107,6 +107,8 @@ export interface API {
 declare class EditorJS {
   public static version: string;
 
+  public configuration: EditorConfig;
+
   public isReady: Promise<void>;
 
   public blocks: Blocks;
@@ -118,7 +120,6 @@ declare class EditorJS {
   public toolbar: Toolbar;
   public inlineToolbar: InlineToolbar;
   public readOnly: ReadOnly;
-  public configuration: EditorConfig;
   constructor(configuration?: EditorConfig|string);
 
   /**

@@ -103,4 +103,6 @@ export interface EditorConfig {
    * Common Block Tunes list. Will be added to all the blocks which do not specify their own 'tunes' set
    */
   tunes?: string[];
+
+  moduleOverrides?:{ [key:string]: unknown };
 }

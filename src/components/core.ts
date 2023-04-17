@@ -329,7 +329,11 @@ export default class Core {
       /**
        * If module has non-default exports, passed object contains them all and default export as 'default' property
        */
-      const Module = _.isFunction(module) ? module : module.default;
+      let Module = _.isFunction(module) ? module : module.default;
+
+      if (this.config.moduleOverrides && Module.displayName in this.config.moduleOverrides) {
+        Module = this.config.moduleOverrides[Module.displayName];
+      }
 
       try {
         /**
